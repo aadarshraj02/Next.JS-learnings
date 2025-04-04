@@ -2,8 +2,8 @@
 import { games } from "@/app/data/games";
 import { FaGamepad, FaCalendarAlt, FaDesktop, FaStar } from "react-icons/fa";
 
-const MainGamePage = ({ params }: { params: { slug: string[] } }) => {
-  const { slug } = params;
+const MainGamePage = async ({ params }: { params: { slug: string[] } }) => {
+  const { slug } = await params;
   const [category, gameSlug] = slug;
 
   const game = games.find(
