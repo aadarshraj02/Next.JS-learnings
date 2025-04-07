@@ -27,7 +27,34 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
           </ul>
         </nav>
       </header>
-      {children}
+      <div className="div flex-1">
+        <aside className="w-64 bg-gray-100 p-4">
+          <ul>
+            <li>
+              <Link
+                href="/admin/dashboard"
+                className="block py-2 hover:bg-gray-300"
+              >
+                Dashboard
+              </Link>
+            </li>
+            <li>
+              <Link href="/admin/user" className="block py-2 hover:bg-gray-300">
+                Manage Users
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/admin/settings"
+                className="block py-2 hover:bg-gray-300"
+              >
+                Settings
+              </Link>
+            </li>
+          </ul>
+        </aside>
+        {children}
+      </div>
     </div>
   );
 };
