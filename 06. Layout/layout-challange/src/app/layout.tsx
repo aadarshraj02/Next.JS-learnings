@@ -57,9 +57,12 @@ const BaseLayout = ({ children }: { children: ReactNode }) => {
                 </li>
               </ul>
             </aside>
+            <main className="flex-1 p-6 bg-white ">{children}</main>
           </div>
+          <footer className="bg-purple-800 text-white p-4 mt-4 text-center">
+            <p>&copy;2025 Learning NextJs</p>
+          </footer>
         </div>
-        {children}
       </body>
     </html>
   );
