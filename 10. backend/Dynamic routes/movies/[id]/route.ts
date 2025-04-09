@@ -56,3 +56,38 @@ export async function PATCH(
     );
   }
 }
+
+export async function DELETE(
+  req: Request,
+  { params }: { params: { id: string } }
+) {
+  const { id } = params;
+  const movieId = +id;
+
+  const index = movies.findIndex((m) => m.id === movieId);
+
+  if (index === -1) {
+    return (
+      new Response(
+        JSON.stringify({
+          error: "Movie not Found",
+        })
+      ),
+      {
+        status: 404,
+      }
+    );
+  }
+  movies.splice(index, 1);
+
+  return (
+    new Response(
+      JSON.stringify({
+        message: "Movie deleted successfully",
+      })
+    ),
+    {
+      status: 200,
+    }
+  );
+}
